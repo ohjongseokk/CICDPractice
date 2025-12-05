@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "co.kr.datau.cicdpractice"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "co.kr.datau.cicdpractice"
