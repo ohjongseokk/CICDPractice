@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             CICDPracticeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "CI/CD를 연습하고 있습니다.",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -33,15 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = name,
         modifier = modifier
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CICDPracticeTheme {
-        Greeting("Android")
-    }
 }
