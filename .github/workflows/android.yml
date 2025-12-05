@@ -24,3 +24,5 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Print Hello DataUniverse
+      run: echo "Hello DataUniverse-!"
