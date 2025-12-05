@@ -32,9 +32,12 @@ jobs:
       if: always()
       uses: slackapi/slack-github-action@v1.27.0
       with:
-        payload: |
-          {
-            "text": "Android CI 결과: *${{ job.status }}* \nRepo: ${{ github.repository }}\nBranch: ${{ github.ref_name }}\nAuthor: ${{ github.actor }}"
-          }
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took,pullRequest
+
+#        payload: |
+#          {
+#            "text": "Android CI 결과: *${{ job.status }}* \nRepo: ${{ github.repository }}\nBranch: ${{ github.ref_name }}\nAuthor: ${{ github.actor }}"
+#          }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
