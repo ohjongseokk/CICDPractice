@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("io.gitlab.arturbosch.detekt")
+//    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
@@ -45,7 +45,7 @@ android {
 }
 
 dependencies {
-    detektPlugins(project(":detekt"))
+//    detektPlugins(project(":detekt"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

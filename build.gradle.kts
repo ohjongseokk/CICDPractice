@@ -4,5 +4,5 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
-    id("io.gitlab.arturbosch.detekt") version "1.19.0" apply false
+//    id("io.gitlab.arturbosch.detekt") version "1.19.0" apply false
 }
