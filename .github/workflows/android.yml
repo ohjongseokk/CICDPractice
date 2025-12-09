@@ -24,7 +24,7 @@ jobs:
       run: chmod +x gradlew
     - name: Create local.properties
       run: | 
-        echo "sdk.dir=$ANDROID_HOME" > local.properties
+        echo "sdk.dir=/Users/lyh/Library/Android/sdk" > local.properties
 
     - name: Build with Gradle
       run: ./gradlew build
