@@ -1,7 +1,5 @@
 package co.kr.datau.cicdpractice
 
-import co.kr.datau.cicdpractice.BuildConfig
-
 object Const {
     val BASE_URL = if (BuildConfig.DEBUG) {
         "dev-www.naver.com"
@@ -9,7 +7,7 @@ object Const {
         "www.naver.com"
     }
 
-    const val RELEASE_VALUE_INT = 0
+    const val RELEASE_VALUE_INT = 1
     const val RELEASE_VALUE_STRING = ""
     // test
 

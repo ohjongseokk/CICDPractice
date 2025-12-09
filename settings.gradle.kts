@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CICDPractice"
 include(":app")
- 
+include(":detekt")
