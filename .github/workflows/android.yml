@@ -18,13 +18,13 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
+#        cache: gradle
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Create local.properties
       run: | 
-        echo "sdk.dir=/Users/lyh/Library/Android/sdk" > local.properties
+        echo "sdk.dir=C:\\Users\\DU\\AppData\\Local\\Android\\sdk" > local.properties
 
     - name: Build with Gradle
       run: ./gradlew build
