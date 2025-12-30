@@ -4,10 +4,10 @@ object Const {
     val BASE_URL = if (BuildConfig.DEBUG) {
         "dev-www.naver.com"
     } else {
-        "dev-www.naver.com"
+        "www.naver.com"
     }
 
-    const val RELEASE_VALUE_INT = 1
+    const val RELEASE_VALUE_INT = 0
     const val RELEASE_VALUE_STRING = ""
     // testestset
     // testestset
