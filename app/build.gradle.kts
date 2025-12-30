@@ -27,10 +27,6 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
 
-        debug {
-            isDebuggable = true
-            applicationIdSuffix = ".debug"
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
