@@ -4,7 +4,7 @@ object Const {
     val BASE_URL = if (BuildConfig.DEBUG) {
         "dev-www.naver.com"
     } else {
-        "www.naver.com"
+        "dev-www.naver.com"
     }
 
     const val RELEASE_VALUE_INT = 1
