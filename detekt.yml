@@ -10,6 +10,8 @@ build:
 const-rules:
   CheckReleaseValueInt:
     active: true
+  CheckBaseUrl:
+    active: true
 
 config:
   validation: true
