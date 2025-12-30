@@ -66,7 +66,7 @@ dependencies {
 detekt {
     toolVersion = "1.23.5"
     config = files("$rootDir/detekt.yml")
-    buildUponDefaultConfig = true
+    buildUponDefaultConfig = false
     allRules = false
     autoCorrect = true
     ignoreFailures = false
