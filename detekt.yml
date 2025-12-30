@@ -7,7 +7,7 @@ build:
     # style: 1
     # comments: 1
 
-const-rules:
+test-rules:
   CheckReleaseValueInt:
     active: true
   CheckBaseUrl:

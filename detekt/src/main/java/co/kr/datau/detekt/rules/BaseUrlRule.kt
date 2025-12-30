@@ -16,7 +16,7 @@ class BaseUrlRule(config: Config) : Rule(config) {
 
         if (
             property.name == "BASE_URL" &&
-            property.isTopLevel &&
+            !property.isTopLevel &&
             property.containingKtFile.packageFqName.asString() == "co.kr.datau.cicdpractice"
         ) {
             val initializer = property.initializer?.text

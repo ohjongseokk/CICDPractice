@@ -16,7 +16,7 @@ class ConstValueRule(config: Config) : Rule(config) {
 
         if (
             property.name == "RELEASE_VALUE_INT" &&
-            property.isTopLevel &&
+            !property.isTopLevel &&
             property.containingKtFile.packageFqName.asString() == "co.kr.datau.cicdpractice"
         ) {
             val initializer = property.initializer?.text
