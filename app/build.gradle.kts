@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("io.gitlab.arturbosch.detekt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -62,6 +63,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
 }
 
 detekt {
@@ -70,4 +73,5 @@ detekt {
     buildUponDefaultConfig = true
     allRules = false
     autoCorrect = true
+    ignoreFailures = false
 }

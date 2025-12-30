@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570432063112",
+    "project_id": "cicd-practice-21aa8",
+    "storage_bucket": "cicd-practice-21aa8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570432063112:android:7a60d08e3de4f4c016413d",
+        "android_client_info": {
+          "package_name": "co.kr.datau.cicdpractice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWj2WafmkPmmKSeY5xKW9dwUCUzF_zsaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
