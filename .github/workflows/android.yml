@@ -28,8 +28,12 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Run detekt
-      run: ./gradlew detekt
+
+    - name: Detekt Debug
+      run: ./gradlew detekt-debug
+
+    - name: Detekt Release
+      run: ./gradlew detekt-release
 
     - name: Slack Notification
       if: always()

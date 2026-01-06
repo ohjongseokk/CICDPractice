@@ -1,11 +1,8 @@
 package co.kr.datau.cicdpractice
 
 object Const {
-    val BASE_URL = if (BuildConfig.DEBUG) {
-        "www.naver.com"
-    } else {
-        "www.naver.com"
-    }
+//    const val BASE_URL = BuildConfig.BASE_URL
+    const val BASE_URL = "dev-www.naver.com"
 
     const val RELEASE_VALUE_INT = 0
     const val RELEASE_VALUE_STRING = ""

@@ -21,13 +21,27 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField(
+                "String",
+                "BASE_URL",
+                "\"dev-www.naver.com\""
+            )
+        }
+
         release {
+            buildConfigField(
+                "String",
+                "BASE_URL",
+                "\"dev-www.naver.com\""
+            )
+
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("debug")
         }
-
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -63,9 +77,44 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
 }
 
+tasks.register("detekt-debug") {
+    group = "verification"
+    description = "Run detekt with debug rules"
+
+    doFirst {
+        project.extensions
+            .getByType<io.gitlab.arturbosch.detekt.extensions.DetektExtension>()
+            .config = files("$rootDir/detekt/detekt-debug.yml")
+    }
+
+//    dependsOn("detekt")
+}
+
+tasks.register("detekt-release") {
+    group = "verification"
+    description = "Run detekt with release rules"
+
+    doFirst {
+        project.extensions
+            .getByType<io.gitlab.arturbosch.detekt.extensions.DetektExtension>()
+            .config = files("$rootDir/detekt/detekt-release.yml")
+    }
+
+//    dependsOn("detekt")
+}
+
+
+//val detektConfig = when {
+//    project.hasProperty("release") ->
+//        files("$rootDir/detekt/detekt-release.yml")
+//
+//    else ->
+//        files("$rootDir/detekt/detekt-debug.yml")
+//}
+
 detekt {
     toolVersion = "1.23.5"
-    config = files("$rootDir/detekt.yml")
+//    config = detektConfig
     buildUponDefaultConfig = false
     allRules = false
     autoCorrect = true

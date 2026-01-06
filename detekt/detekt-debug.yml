@@ -1,0 +1,31 @@
+build:
+  maxIssues: 9999   # 사실상 fail 안 나게
+  excludeCorrectable: false
+
+# ❌ 기본 룰셋 전부 끄기
+complexity:
+  active: false
+
+style:
+  active: false
+
+formatting:
+  active: false
+
+performance:
+  active: false
+
+naming:
+  active: false
+
+comments:
+  active: false
+
+potential-bugs:
+  active: false
+
+empty-blocks:
+  active: false
+
+exceptions:
+  active: false

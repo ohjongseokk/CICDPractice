@@ -1,0 +1,2 @@
+# json_key_file(""C:\Users\DU\Downloads\cicd-practice-482802-211e53923dab.json"") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("co.kr.datau.cicdpractice") # e.g. com.krausefx.app
