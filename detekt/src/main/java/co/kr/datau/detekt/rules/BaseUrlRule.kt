@@ -15,8 +15,8 @@ class BaseUrlRule(config: Config) : Rule(config) {
         super.visitProperty(property)
 
         if (
-            property.name == "BASE_URL" &&
-            property.containingKtFile.packageFqName.asString() == "co.kr.datau.cicdpractice"
+            property.name == "BASE_URL"
+//            property.containingKtFile.packageFqName.asString() == "co.kr.datau.cicdpractice"
         ) {
             val initializer = property.initializer?.text
 

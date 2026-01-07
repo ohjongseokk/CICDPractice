@@ -8,6 +8,7 @@ build:
     # comments: 1
 
 test-rules:
+  active: true
   CheckReleaseValueInt:
     active: true
   CheckBaseUrl:

@@ -114,7 +114,7 @@ tasks.register("detekt-release") {
 
 detekt {
     toolVersion = "1.23.5"
-//    config = detektConfig
+    config = files("$rootDir/detekt/detekt-release.yml")
     buildUponDefaultConfig = false
     allRules = false
     autoCorrect = true
