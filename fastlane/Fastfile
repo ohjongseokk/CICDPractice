@@ -11,7 +11,7 @@ platform :android do
       firebase_app_distribution(
         app: "1:570432063112:android:7a60d08e3de4f4c016413d",
         # 경로를 환경 변수에서 가져오거나, 못 가져오면 현재 폴더 기준 파일명을 찾도록 함
-        service_credentials_file: ENV["GOOGLE_APPLICATION_CREDENTIALS"] || "service-account-key.json",
+        service_credentials_file: "fastlane/service-account-key.json",
         groups: "qa",
         release_notes: "CI 자동 배포",
         debug: true,
