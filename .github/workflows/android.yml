@@ -18,15 +18,12 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
+#        cache: gradle
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.2'
-
-    - name: Install Fastlane
-      run: gem install fastlane
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -42,6 +39,12 @@ jobs:
 
     - name: Detekt Release
       run: ./gradlew detekt-release
+
+    - name: Install dependencies
+      run: |
+        install fastlane
+        gem install bundler
+        bundle install
 
     - name: Create service account key
       run: |
