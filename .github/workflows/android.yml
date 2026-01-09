@@ -18,7 +18,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-#        cache: gradle
+        cache: gradle
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -37,8 +37,8 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Detekt Debug
-      run: ./gradlew detekt-debug
+#    - name: Detekt Debug
+#      run: ./gradlew detekt-debug
 
     - name: Detekt Release
       run: ./gradlew detekt-release
