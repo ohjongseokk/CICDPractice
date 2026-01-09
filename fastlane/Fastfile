@@ -1,21 +1,6 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:android)
 
-ENV["GOOGLE_APPLICATION_CREDENTIALS"] = File.expand_path("./fastlane/cicd-practice-21aa8-02789169dc4c.json")
+# ENV["GOOGLE_APPLICATION_CREDENTIALS"] = File.expand_path("./fastlane/cicd-practice-21aa8-02789169dc4c.json")
 
 platform :android do
     desc "Distribute build to Firebase App Distribution"
@@ -27,6 +12,7 @@ platform :android do
 
       firebase_app_distribution(
         app: "1:570432063112:android:7a60d08e3de4f4c016413d",
+        service_credentials_file: "./fastlane/cicd-practice-21aa8-02789169dc4c.json",
         groups: "qa",
         release_notes: "CI 자동 배포",
         debug: true

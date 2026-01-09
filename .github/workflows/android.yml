@@ -43,6 +43,10 @@ jobs:
     - name: Detekt Release
       run: ./gradlew detekt-release
 
+    - name: Create service account key
+      run: |
+        echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}' > fastlane/cicd-practice-21aa8-02789169dc4c.json
+
     - name: Firebase App Distribution
       run: fastlane android firebase
 
