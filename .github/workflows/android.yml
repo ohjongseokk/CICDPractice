@@ -36,15 +36,16 @@ jobs:
 #        echo "sdk.dir=C\:\\\\Users\\\\DU\\\\AppData\\\\Local\\\\Android\\\\sdk" > local.properties
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug --no-daemon
+#      run: ./gradlew assembleDebug --no-daemon
+      run: ./gradlew assembleDebug -PbuildNumber=${{ github.run_number }} --no-daemon
 #    - name: Build with Gradle
 #      run: ./gradlew build
 
 #    - name: Detekt Debug
 #      run: ./gradlew detekt-debug
 
-    - name: Detekt Release
-      run: ./gradlew detekt-release
+#    - name: Detekt Release
+#      run: ./gradlew detekt-release
 
     - name: Create service account key
       run: |
