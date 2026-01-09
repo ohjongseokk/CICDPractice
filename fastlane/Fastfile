@@ -5,40 +5,40 @@ platform :android do
     lane :firebase do
         build_no = ENV["GITHUB_RUN_NUMBER"] || "1"
 
-       gradle(
-         task: "assemble",
-         build_type: "Debug",
-         properties: {
-           "buildNumber" => build_no
-         }
-       )
+        gradle(
+            task: "assemble",
+            build_type: "Debug",
+            properties: {
+                "buildNumber" => build_no
+            }
+        )
 
-      firebase_app_distribution(
-        app: "1:570432063112:android:7a60d08e3de4f4c016413d",
-        # 경로를 환경 변수에서 가져오거나, 못 가져오면 현재 폴더 기준 파일명을 찾도록 함
-        service_credentials_file: "fastlane/service-account-key.json",
-        groups: "qa",
-        release_notes: "CI 자동 배포 : #{build_no}",
-        debug: true,
-      )
-      end
+        firebase_app_distribution(
+            app: "1:570432063112:android:7a60d08e3de4f4c016413d",
+            # 경로를 환경 변수에서 가져오거나, 못 가져오면 현재 폴더 기준 파일명을 찾도록 함
+            service_credentials_file: "fastlane/service-account-key.json",
+            groups: "qa",
+            release_notes: "CI 자동 배포 : #{build_no}",
+            debug: true,
+        )
+    end
 
-      desc "Runs all the tests"
-      lane :test do
+    desc "Runs all the tests"
+    lane :test do
         gradle(task: "test")
-      end
+    end
 
-      desc "Submit a new Beta Build to Crashlytics Beta"
-      lane :beta do
+    desc "Submit a new Beta Build to Crashlytics Beta"
+    lane :beta do
         gradle(task: "clean assembleRelease")
         crashlytics
 
         # sh "your_script.sh"
         # You can also use other beta testing services here
-      end
+    end
 
-      desc "Deploy a new version to the Google Play"
-      lane :deploy do
+    desc "Deploy a new version to the Google Play"
+    lane :deploy do
         gradle(task: "clean assembleRelease")
         upload_to_play_store
     end

@@ -9,13 +9,10 @@ plugins {
     id("com.google.gms.google-services")
 }
 
-// 날짜를 가져오는 함수 (yy.MM.dd 형식)
 fun getFormattedDate(): String = SimpleDateFormat("yy.MM.dd").format(Date())
 
-// 버전을 숫자로만 변환하는 함수 (yyMMdd + 횟수)
 fun getVersionCodeFromDate(buildNumber: Int): Int {
     val datePart = SimpleDateFormat("yyMMdd").format(Date())
-    // 260109 + 01 = 26010901
     return (datePart + String.format("%02d", buildNumber)).toInt()
 }
 
@@ -32,30 +29,19 @@ android {
 
         // versionName: 26.01.09.01 형식
         versionName = "${getFormattedDate()}.${String.format("%02d", buildNumber)}"
-
         // versionCode: 26010901 형식 (숫자)
         versionCode = getVersionCodeFromDate(buildNumber)
-//        versionCode = 1
-//        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"dev-www.naver.com\""
-            )
+            buildConfigField("String", "BASE_URL", "\"dev-www.naver.com\"")
         }
 
         release {
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"dev-www.naver.com\""
-            )
+            buildConfigField("String", "BASE_URL", "\"dev-www.naver.com\"")
 
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
