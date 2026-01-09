@@ -12,7 +12,7 @@ platform :android do
 
       firebase_app_distribution(
         app: "1:570432063112:android:7a60d08e3de4f4c016413d",
-        service_credentials_file: "./fastlane/cicd-practice-21aa8-02789169dc4c.json",
+        service_credentials_file: File.expand_path("cicd-practice-21aa8-02789169dc4c.json"),
         groups: "qa",
         release_notes: "CI 자동 배포",
         debug: true
