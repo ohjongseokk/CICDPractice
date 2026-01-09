@@ -38,6 +38,7 @@ jobs:
     - name: Build with Gradle
 #      run: ./gradlew assembleDebug --no-daemon
       run: ./gradlew assembleDebug -PbuildNumber=${{ github.run_number }} --no-daemon
+
 #    - name: Build with Gradle
 #      run: ./gradlew build
 
