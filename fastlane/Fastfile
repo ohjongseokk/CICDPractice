@@ -5,7 +5,10 @@ platform :android do
     lane :firebase do
       gradle(
         task: "assemble",
-        build_type: "Debug"
+        build_type: "Debug",
+        properties: {
+          "buildNumber" => build_no
+        }
       )
 
       firebase_app_distribution(
