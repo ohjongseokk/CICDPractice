@@ -45,10 +45,14 @@ jobs:
 
     - name: Create service account key
       run: |
-        echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}" | base64 --decode > fastlane/cicd-practice-21aa8-02789169dc4c.json
+        # 이미 폴더가 있으므로 바로 그 안에 생성합니다.
+        echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}' | base64 --decode > fastlane/service-account-key.json
 
     - name: Firebase App Distribution
-      run: fastlane android firebase
+      # bundle exec를 사용하고 env를 주입합니다.
+      run: bundle exec fastlane android firebase
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/fastlane/service-account-key.json
 
     - name: Slack Notification
       if: always()
