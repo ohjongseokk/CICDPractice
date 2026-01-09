@@ -15,6 +15,8 @@
 
 default_platform(:android)
 
+ENV["GOOGLE_APPLICATION_CREDENTIALS"] = File.expand_path("./fastlane/cicd-practice-21aa8-02789169dc4c.json")
+
 platform :android do
     desc "Distribute build to Firebase App Distribution"
     lane :firebase do
@@ -25,7 +27,6 @@ platform :android do
 
       firebase_app_distribution(
         app: "1:570432063112:android:7a60d08e3de4f4c016413d",
-        service_credentials_file: "./fastlane/cicd-practice-21aa8-02789169dc4c.json",
         groups: "qa",
         release_notes: "CI 자동 배포",
         debug: true
@@ -41,7 +42,7 @@ platform :android do
   lane :beta do
     gradle(task: "clean assembleRelease")
     crashlytics
-  
+
     # sh "your_script.sh"
     # You can also use other beta testing services here
   end

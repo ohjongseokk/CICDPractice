@@ -45,8 +45,6 @@ jobs:
 
     - name: Firebase App Distribution
       run: fastlane android firebase
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
     - name: Slack Notification
       if: always()
