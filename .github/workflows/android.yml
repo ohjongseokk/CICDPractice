@@ -20,6 +20,15 @@ jobs:
         distribution: 'temurin'
 #        cache: gradle
 
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        bundler-cache: true
+
+    - name: Install Fastlane
+      run: gem install fastlane
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 #    - name: Create local.properties
@@ -34,6 +43,11 @@ jobs:
 
     - name: Detekt Release
       run: ./gradlew detekt-release
+
+    - name: Firebase App Distribution
+      run: fastlane android firebase
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
     - name: Slack Notification
       if: always()
