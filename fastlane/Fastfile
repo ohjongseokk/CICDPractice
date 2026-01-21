@@ -17,6 +17,7 @@ platform :android do
             app: "1:570432063112:android:7a60d08e3de4f4c016413d",
             # 경로를 환경 변수에서 가져오거나, 못 가져오면 현재 폴더 기준 파일명을 찾도록 함
             service_credentials_file: "fastlane/service-account-key.json",
+            android_artifact_type: "AAB",
             groups: "qa",
             release_notes: "CI 자동 배포 : #{build_no}",
             debug: true,
